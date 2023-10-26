@@ -1,15 +1,12 @@
 package com.fraudetect.customer.model;
 
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.SequenceGenerator;
-import jakarta.persistence.GenerationType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import javax.persistence.*;
 
 @Data
 @Builder
@@ -17,8 +14,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Entity
 public class Customer {
-
     @Id
+    @Column(name = "id", nullable = false)
     @SequenceGenerator(name = "customer_id_sequence",
     sequenceName = "customer_id_sequence")
     @GeneratedValue(strategy = GenerationType.SEQUENCE,

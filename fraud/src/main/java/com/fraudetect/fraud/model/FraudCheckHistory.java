@@ -1,11 +1,11 @@
 package com.fraudetect.fraud.model;
 
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Data
@@ -14,7 +14,10 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Entity
 public class FraudCheckHistory {
+
+
     @Id
+    @Column(name = "id", nullable = false)
     @SequenceGenerator(
             name = "fraud_id_sequence",
             sequenceName = "fraud_id_sequence"
